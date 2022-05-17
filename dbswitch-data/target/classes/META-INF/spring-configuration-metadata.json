@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "dbswitch",
+      "type": "com.gitee.dbswitch.data.config.DbswichProperties",
+      "sourceType": "com.gitee.dbswitch.data.config.DbswichProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dbswitch.source",
+      "type": "java.util.List<com.gitee.dbswitch.data.entity.SourceDataSourceProperties>",
+      "sourceType": "com.gitee.dbswitch.data.config.DbswichProperties"
+    },
+    {
+      "name": "dbswitch.target",
+      "type": "com.gitee.dbswitch.data.entity.TargetDataSourceProperties",
+      "sourceType": "com.gitee.dbswitch.data.config.DbswichProperties"
+    }
+  ],
+  "hints": []
+}

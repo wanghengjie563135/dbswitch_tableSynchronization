@@ -1,0 +1,44 @@
+dbswitch:
+  source:
+    # source database connection information
+    ## support MySQL/MariaDB/DB2/DM/Kingbase8/Oracle/SQLServer/PostgreSQL/Greenplum
+    ## support mutiple source database connection
+    - url: jdbc:oracle:thin:@172.17.2.10:1521:ORCL
+      driver-class-name: 'oracle.jdbc.driver.OracleDriver'
+      username: 'system'
+      password: '123456'
+      # source database configuration parameters
+      ## fetch size for query source database
+      fetch-size: 10000
+      ## schema name for query source schemas, separate by ','
+      source-schema: 'TANG'
+      ## table name include from table lists, separate by ','
+      source-includes: ''
+      ## table name exclude from table lists, separate by ','
+      source-excludes: ''
+      ## table name convert mapper by regular expression
+      regex-table-mapper:
+        - 'from-pattern': '^'
+          'to-value': 'T_'
+      ## columns name convert mapper by regular expression like regex-table-mapper
+      regex-column-mapper:
+
+  target:
+    # target database connection information
+    ## Best support for Oracle/PostgreSQL/Greenplum/DM/Kingbase8
+    url: jdbc:postgresql://172.17.2.10:5432/test
+    driver-class-name: org.postgresql.Driver
+    username: tang
+    password: 123456
+    # target database configuration parameters
+    ## schema name for create/insert table data
+    target-schema: public
+    ## whether drop-create table when target table exist
+    target-drop: true
+    ## whether create table support auto increment for primary key field
+    create-table-auto-increment: false
+    ## whether use insert engine to write data for target database
+    ## Only useful for PostgreSQL/Greenplum database
+    writer-engine-insert: false
+    ## whether use change data synchronize to target database table
+    change-data-sync: true

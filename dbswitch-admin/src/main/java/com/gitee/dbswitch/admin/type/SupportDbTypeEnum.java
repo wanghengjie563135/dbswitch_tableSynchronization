@@ -17,7 +17,7 @@ import org.springframework.util.StringUtils;
 @AllArgsConstructor
 public enum SupportDbTypeEnum {
 
-  MYSQL(1, "mysql", "com.mysql.jdbc.Driver", 3306,
+  MYSQL(1, "mysql", "com.mysql.cj.jdbc.Driver", 3306,
       "/* ping */ SELECT 1",
       "jdbc:mysql://",
       new String[]{"jdbc:mysql://{host}[:{port}]/[{database}][\\?{params}]"}),

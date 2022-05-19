@@ -11,7 +11,7 @@ spring:
     throw-exception-if-no-handler-found: true
     static-path-pattern: /statics/**
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${MYSQLDB_HOST:dbswitch_mysqldb}:${MYSQLDB_PORT:3306}/dbswitch?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false&allowMultiQueries=true&failOverReadOnly=false&connectTimeout=30000
     username: ${MYSQLDB_USERNAME:tangyibo}
     password: ${MYSQLDB_PASSWORD:123456}
